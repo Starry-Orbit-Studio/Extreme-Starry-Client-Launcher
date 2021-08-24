@@ -23,20 +23,17 @@ namespace DTALauncherStub
             {
                 foreach (string arg in args)
                 {
-                    if (arg.ToUpper() == "-XNA")
+                    switch (arg.ToUpper())
                     {
-                        RunXNA();
-                        return;
-                    }
-                    else if (arg.ToUpper() == "-OGL")
-                    {
-                        RunOGL();
-                        return;
-                    }
-                    else if (arg.ToUpper() == "-DX")
-                    {
-                        RunDX();
-                        return;
+                        //case "-XNA":
+                        //    RunXNA();
+                        //    return;
+                        case "-OGL":
+                            RunOGL();
+                            return;
+                        case "-DX":
+                            RunDX();
+                            return;
                     }
                 }
             }
@@ -45,13 +42,14 @@ namespace DTALauncherStub
             {
                 case OSVersion.WINXP:
                 case OSVersion.WINVISTA:
-                    if (!IsNetFramework4Installed())
-                    {
-                        Application.Run(new NETFramework4MissingMessageForm());
-                        break;
-                    }
+                    MessageBox.Show("We are sorry to inform you that your operating system version is too low to run this program, please upgrade your operating system", "Extreme Starry Client Launcher");
+                    //if (!IsNetFramework4Installed())
+                    //{
+                    //    Application.Run(new NETFramework4MissingMessageForm());
+                    //    break;
+                    //}
 
-                    RunXNA();
+                    //RunXNA();
                     break;
                 case OSVersion.WIN7:
                 case OSVersion.WIN810:
@@ -63,7 +61,7 @@ namespace DTALauncherStub
                     break;
             }
         }
-
+        [Obsolete]
         private static void RunXNA()
         {
             if (!IsXNAFramework4Installed())
@@ -102,11 +100,11 @@ namespace DTALauncherStub
 
             if (File.Exists(dxFailFilePath))
             {
-                if (IsXNAFramework4Installed())
-                {
-                    RunXNA();
-                    return;
-                }
+                //if (IsXNAFramework4Installed())
+                //{
+                //    RunXNA();
+                //    return;
+                //}
 
                 DialogResult dr = new IncompatibleGPUMessageForm().ShowDialog();
                 if (dr == DialogResult.No)
@@ -116,7 +114,7 @@ namespace DTALauncherStub
                 }
                 else if (dr == DialogResult.Yes)
                 {
-                    RunXNA();
+                    RunOGL();
                 }
 
                 return;
@@ -138,7 +136,12 @@ namespace DTALauncherStub
 
             try
             {
-                Process.Start(completeFilePath);
+                Process proc = Process.Start(completeFilePath);
+                proc.WaitForExit();
+                if(proc.ExitCode != 0)
+                {
+                    MessageBox.Show("Extreme Starry Client has experienced abnormal exit behavior.", "Extreme Starry Client Launcher Error");
+                }
             }
             catch (Win32Exception ex)
             {

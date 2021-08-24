@@ -42,9 +42,9 @@
             // 
             this.btnRunDX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRunDX.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnRunDX.Location = new System.Drawing.Point(85, 259);
+            this.btnRunDX.Location = new System.Drawing.Point(85, 239);
             this.btnRunDX.Name = "btnRunDX";
-            this.btnRunDX.Size = new System.Drawing.Size(209, 23);
+            this.btnRunDX.Size = new System.Drawing.Size(209, 21);
             this.btnRunDX.TabIndex = 5;
             this.btnRunDX.Text = "Launch DirectX11 version";
             this.btnRunDX.UseVisualStyleBackColor = true;
@@ -53,9 +53,9 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(10, 13);
+            this.lblDescription.Location = new System.Drawing.Point(10, 12);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(336, 26);
+            this.lblDescription.Size = new System.Drawing.Size(419, 24);
             this.lblDescription.TabIndex = 3;
             this.lblDescription.Text = "The client has detected an incompatibility between your graphics card\r\nand the Di" +
     "rectX11 version of the CnCNet client.";
@@ -63,9 +63,9 @@
             // lblXNALink
             // 
             this.lblXNALink.AutoSize = true;
-            this.lblXNALink.Location = new System.Drawing.Point(10, 126);
+            this.lblXNALink.Location = new System.Drawing.Point(10, 116);
             this.lblXNALink.Name = "lblXNALink";
-            this.lblXNALink.Size = new System.Drawing.Size(327, 13);
+            this.lblXNALink.Size = new System.Drawing.Size(377, 12);
             this.lblXNALink.TabIndex = 10;
             this.lblXNALink.TabStop = true;
             this.lblXNALink.Text = "https://www.microsoft.com/en-us/download/details.aspx?id=20914";
@@ -74,18 +74,18 @@
             // lblXNADescription
             // 
             this.lblXNADescription.AutoSize = true;
-            this.lblXNADescription.Location = new System.Drawing.Point(10, 59);
+            this.lblXNADescription.Location = new System.Drawing.Point(10, 54);
             this.lblXNADescription.Name = "lblXNADescription";
-            this.lblXNADescription.Size = new System.Drawing.Size(357, 52);
+            this.lblXNADescription.Size = new System.Drawing.Size(455, 48);
             this.lblXNADescription.TabIndex = 9;
             this.lblXNADescription.Text = resources.GetString("lblXNADescription.Text");
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 158);
+            this.label1.Location = new System.Drawing.Point(10, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(346, 39);
+            this.label1.Size = new System.Drawing.Size(455, 36);
             this.label1.TabIndex = 11;
             this.label1.Text = "Alternatively, you can retry launching the DirectX11 version of the client.\r\n\r\nWe" +
     " apologize for the inconvenience.";
@@ -94,30 +94,30 @@
             // 
             this.btnRunXNAOnce.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRunXNAOnce.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnRunXNAOnce.Location = new System.Drawing.Point(85, 230);
+            this.btnRunXNAOnce.Location = new System.Drawing.Point(85, 212);
             this.btnRunXNAOnce.Name = "btnRunXNAOnce";
-            this.btnRunXNAOnce.Size = new System.Drawing.Size(209, 23);
+            this.btnRunXNAOnce.Size = new System.Drawing.Size(209, 21);
             this.btnRunXNAOnce.TabIndex = 13;
-            this.btnRunXNAOnce.Text = "Launch XNA version";
+            this.btnRunXNAOnce.Text = "Launch OpenGL version";
             this.btnRunXNAOnce.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(85, 288);
+            this.button1.Location = new System.Drawing.Point(85, 266);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 23);
+            this.button1.Size = new System.Drawing.Size(209, 21);
             this.button1.TabIndex = 14;
             this.button1.Text = "Exit";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // IncompatibleGPUMessageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(379, 323);
+            this.ClientSize = new System.Drawing.Size(379, 298);
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRunXNAOnce);
