@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncompatibleGPUMessageForm));
             this.btnRunDX = new System.Windows.Forms.Button();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.lblXNALink = new System.Windows.Forms.LinkLabel();
-            this.lblXNADescription = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRunXNAOnce = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,9 +37,10 @@
             // 
             // btnRunDX
             // 
-            this.btnRunDX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRunDX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRunDX.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnRunDX.Location = new System.Drawing.Point(85, 239);
+            this.btnRunDX.Location = new System.Drawing.Point(85, 123);
             this.btnRunDX.Name = "btnRunDX";
             this.btnRunDX.Size = new System.Drawing.Size(209, 21);
             this.btnRunDX.TabIndex = 5;
@@ -60,30 +58,10 @@
             this.lblDescription.Text = "The client has detected an incompatibility between your graphics card\r\nand the Di" +
     "rectX11 version of the CnCNet client.";
             // 
-            // lblXNALink
-            // 
-            this.lblXNALink.AutoSize = true;
-            this.lblXNALink.Location = new System.Drawing.Point(10, 116);
-            this.lblXNALink.Name = "lblXNALink";
-            this.lblXNALink.Size = new System.Drawing.Size(377, 12);
-            this.lblXNALink.TabIndex = 10;
-            this.lblXNALink.TabStop = true;
-            this.lblXNALink.Text = "https://www.microsoft.com/en-us/download/details.aspx?id=20914";
-            this.lblXNALink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblXNALink_LinkClicked);
-            // 
-            // lblXNADescription
-            // 
-            this.lblXNADescription.AutoSize = true;
-            this.lblXNADescription.Location = new System.Drawing.Point(10, 54);
-            this.lblXNADescription.Name = "lblXNADescription";
-            this.lblXNADescription.Size = new System.Drawing.Size(455, 48);
-            this.lblXNADescription.TabIndex = 9;
-            this.lblXNADescription.Text = resources.GetString("lblXNADescription.Text");
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 146);
+            this.label1.Location = new System.Drawing.Point(10, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(455, 36);
             this.label1.TabIndex = 11;
@@ -92,9 +70,10 @@
             // 
             // btnRunXNAOnce
             // 
-            this.btnRunXNAOnce.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRunXNAOnce.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRunXNAOnce.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnRunXNAOnce.Location = new System.Drawing.Point(85, 212);
+            this.btnRunXNAOnce.Location = new System.Drawing.Point(85, 96);
             this.btnRunXNAOnce.Name = "btnRunXNAOnce";
             this.btnRunXNAOnce.Size = new System.Drawing.Size(209, 21);
             this.btnRunXNAOnce.TabIndex = 13;
@@ -103,9 +82,10 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(85, 266);
+            this.button1.Location = new System.Drawing.Point(85, 150);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(209, 21);
             this.button1.TabIndex = 14;
@@ -117,13 +97,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(379, 298);
+            this.ClientSize = new System.Drawing.Size(379, 182);
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRunXNAOnce);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblXNALink);
-            this.Controls.Add(this.lblXNADescription);
             this.Controls.Add(this.btnRunDX);
             this.Controls.Add(this.lblDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -141,8 +119,6 @@
 
         private System.Windows.Forms.Button btnRunDX;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.LinkLabel lblXNALink;
-        private System.Windows.Forms.Label lblXNADescription;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRunXNAOnce;
         private System.Windows.Forms.Button button1;

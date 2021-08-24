@@ -190,7 +190,7 @@ namespace DTALauncherStub
 
             return OSVersion.UNKNOWN;
         }
-
+        [Obsolete]
         private static bool IsNetFramework4Installed()
         {
             try
@@ -229,7 +229,7 @@ namespace DTALauncherStub
 
             return false;
         }
-
+        [Obsolete]
         private static bool IsXNAFramework4Installed()
         {
             try

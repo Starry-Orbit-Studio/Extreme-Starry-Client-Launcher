@@ -18,7 +18,7 @@ namespace DTALauncherStub
 
         private void lblLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://www.microsoft.com/en-US/download/details.aspx?id=30653");
+            Process.Start("https://dotnet.microsoft.com/download/dotnet-framework/net45");
         }
     }
 }

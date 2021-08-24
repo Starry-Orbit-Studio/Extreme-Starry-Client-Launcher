@@ -35,10 +35,11 @@
             // 
             // btnExit
             // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.Location = new System.Drawing.Point(159, 117);
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.Location = new System.Drawing.Point(159, 108);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(98, 23);
+            this.btnExit.Size = new System.Drawing.Size(98, 21);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -47,20 +48,20 @@
             // lblLink
             // 
             this.lblLink.AutoSize = true;
-            this.lblLink.Location = new System.Drawing.Point(10, 82);
+            this.lblLink.Location = new System.Drawing.Point(10, 76);
             this.lblLink.Name = "lblLink";
-            this.lblLink.Size = new System.Drawing.Size(331, 13);
+            this.lblLink.Size = new System.Drawing.Size(365, 12);
             this.lblLink.TabIndex = 4;
             this.lblLink.TabStop = true;
-            this.lblLink.Text = "https://www.microsoft.com/en-US/download/details.aspx?id=30653";
+            this.lblLink.Text = "https://dotnet.microsoft.com/download/dotnet-framework/net45";
             this.lblLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLink_LinkClicked);
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(10, 13);
+            this.lblDescription.Location = new System.Drawing.Point(10, 12);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(360, 52);
+            this.lblDescription.Size = new System.Drawing.Size(449, 48);
             this.lblDescription.TabIndex = 3;
             this.lblDescription.Text = "Your system is missing .NET Framework 4.5.\r\n\r\nTo run the client, you need to have" +
     " .NET Framework 4.5 installed.\r\nYou can download the .NET Framework 4.5 installe" +
@@ -68,10 +69,10 @@
             // 
             // NETFramework45MissingMessageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(421, 152);
+            this.ClientSize = new System.Drawing.Size(421, 140);
             this.ControlBox = false;
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblLink);
