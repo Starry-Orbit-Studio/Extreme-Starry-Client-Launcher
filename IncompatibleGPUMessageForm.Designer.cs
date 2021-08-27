@@ -77,7 +77,7 @@
             this.btnRunXNAOnce.Name = "btnRunXNAOnce";
             this.btnRunXNAOnce.Size = new System.Drawing.Size(209, 21);
             this.btnRunXNAOnce.TabIndex = 13;
-            this.btnRunXNAOnce.Text = "Launch OpenGL version";
+            this.btnRunXNAOnce.Text = "Launch FNA version";
             this.btnRunXNAOnce.UseVisualStyleBackColor = true;
             // 
             // button1

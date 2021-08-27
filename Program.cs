@@ -28,12 +28,18 @@ namespace DTALauncherStub
                         //case "-XNA":
                         //    RunXNA();
                         //    return;
-                        case "-OGL":
-                            RunOGL();
+                        //case "-OGL":
+                        //    RunOGL();
+                        //    return;
+                        case "-FNA":
+                            RunFNA();
                             return;
                         case "-DX":
                             RunDX();
                             return;
+                        case "--update":
+                            RunUpdate();
+                            break;
                     }
                 }
             }
@@ -57,10 +63,24 @@ namespace DTALauncherStub
                     break;
                 case OSVersion.UNIX:
                 case OSVersion.UNKNOWN:
-                    RunOGL();
+                    RunFNA();
                     break;
             }
         }
+
+        private static void RunUpdate()
+        {
+            const string UPDATE_FOLDER = "Update";
+            var update = new DirectoryInfo(UPDATE_FOLDER);
+            if (!update.Exists)
+                return;
+
+            foreach (var f in update.GetFiles())
+                f.MoveTo(update.Parent.FullName);
+            foreach (var f in update.GetDirectories())
+                f.MoveTo(update.Parent.FullName);
+        }
+
         [Obsolete]
         private static void RunXNA()
         {
@@ -72,10 +92,15 @@ namespace DTALauncherStub
 
             StartProcess(RESOURCES + Path.DirectorySeparatorChar + "clientxna.exe");
         }
-
+        [Obsolete]
         private static void RunOGL()
         {
             StartProcess(RESOURCES + Path.DirectorySeparatorChar + "clientogl.exe");
+        }
+
+        private static void RunFNA()
+        {
+            StartProcess(Path.GetFullPath(Path.Combine(RESOURCES, "clientfna.exe")));
         }
 
         private static void RunDX()
@@ -89,14 +114,12 @@ namespace DTALauncherStub
                 }
             }
 
-            StartProcess(RESOURCES + Path.DirectorySeparatorChar + "clientdx.exe");
+            StartProcess(Path.GetFullPath(Path.Combine(RESOURCES, "clientdx.exe")));
         }
 
         private static void W7And10Autorun()
         {
-            string basePath = Environment.CurrentDirectory +
-                Path.DirectorySeparatorChar + "Client" + Path.DirectorySeparatorChar;
-            string dxFailFilePath = basePath + ".dxfail";
+            string dxFailFilePath = Path.GetFullPath(Path.Combine("Client", ".dxfail"));
 
             if (File.Exists(dxFailFilePath))
             {
@@ -114,7 +137,7 @@ namespace DTALauncherStub
                 }
                 else if (dr == DialogResult.Yes)
                 {
-                    RunOGL();
+                    RunFNA();
                 }
 
                 return;
