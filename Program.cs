@@ -1,8 +1,10 @@
 ﻿using Microsoft.Win32;
+
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace DTALauncherStub
@@ -16,8 +18,6 @@ namespace DTALauncherStub
         private static void Main(string[] args)
         {
             var osVersion = GetOperatingSystemVersion();
-
-            char dsc = Path.DirectorySeparatorChar;
 
             if (args != null)
             {
@@ -37,12 +37,11 @@ namespace DTALauncherStub
                         case "-DX":
                             RunDX();
                             return;
-                        case "--update":
-                            RunUpdate();
-                            break;
                     }
                 }
             }
+
+            RunUpdate();
 
             switch (osVersion)
             {
@@ -70,15 +69,44 @@ namespace DTALauncherStub
 
         private static void RunUpdate()
         {
-            const string UPDATE_FOLDER = "Update";
-            var update = new DirectoryInfo(UPDATE_FOLDER);
-            if (!update.Exists)
-                return;
+            var log = new StringBuilder();
+            try
+            {
+                const string UPDATE_FOLDER = "Update";
+                var update = new DirectoryInfo(UPDATE_FOLDER);
+                if (!update.Exists)
+                    return;
 
-            foreach (var f in update.GetFiles())
-                f.MoveTo(update.Parent.FullName);
-            foreach (var f in update.GetDirectories())
-                f.MoveTo(update.Parent.FullName);
+                WaitProcArr(Process.GetProcessesByName("clientdx.exe"));
+                WaitProcArr(Process.GetProcessesByName("clientfna.exe"));
+                WaitProcArr(Process.GetProcessesByName("clientxna.exe"));
+                WaitProcArr(Process.GetProcessesByName("clientogl.exe"));
+
+                foreach (var f in update.GetFiles())
+                {
+                    log.AppendLine($"Move {f.FullName} to {Path.Combine(update.Parent.FullName, f.Name)}");
+                    f.MoveTo(Path.Combine(update.Parent.FullName, f.Name));
+                }
+                foreach (var f in update.GetDirectories())
+                {
+                    log.AppendLine($"Move {f.FullName} to {Path.Combine(update.Parent.FullName, f.Name)}");
+                    f.MoveTo(Path.Combine(update.Parent.FullName, f.Name));
+                }
+                update.Delete();
+
+                void WaitProcArr(Process[] procs)
+                {
+                    if (procs.Length == 0)
+                        return;
+                    
+                    foreach (var proc in procs)
+                        proc.WaitForExit();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"{log} : {e}", "Update Error");
+            }
         }
 
         [Obsolete]
@@ -161,7 +189,7 @@ namespace DTALauncherStub
             {
                 Process proc = Process.Start(completeFilePath);
                 proc.WaitForExit();
-                if(proc.ExitCode != 0)
+                if (proc.ExitCode != 0)
                 {
                     MessageBox.Show("Extreme Starry Client has experienced abnormal exit behavior.", "Extreme Starry Client Launcher Error");
                 }
@@ -227,7 +255,7 @@ namespace DTALauncherStub
             }
             catch
             {
-                
+
             }
 
             return false;
